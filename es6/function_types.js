@@ -1,63 +1,67 @@
 /* APPROACH 1 - USING FUNCTION */
 /* APPROACH 1.1 - CONSTRUCTOR FUNCTION */
-// // function Apple(type) {
-// //     this.type = type;
-// //     this.color = 'red';
-// //     this.getInfo = getAppleInfo;
-// // }
+function Apple(type) {
+    this.type = type;
+    this.color = 'red';
+    this.getInfo = getAppleInfo;
+}
 
-////// This is issue since the method will be created in global namespace thus creating conflicts
-// // function getAppleInfo() {
-// //     console.log(`${this.color} - getAppleInfo called`);
-// // }
+// This is issue since the method will be created in global namespace thus creating conflicts
+function getAppleInfo() {
+    console.log(`${this.color} - getAppleInfo called`);
+}
 
 
 /* APPROACH 1.2 */
-// // function Apple(type) {
-// //     this.type = type;
-// //     this.color = 'pink';
+function Apple(type) {
+    this.type = type;
+    this.color = 'pink';
 
-//////// The below method is created evertime a new object is created
-// //     this.getInfo = function() {
-// //         console.log(`${this.color} - getAppleInfo called`);
-// //     }
-// // }
+//// The below method is created evertime a new object is created
+    this.getInfo = function() {
+        console.log(`${this.color} - getAppleInfo called`);
+    }
+}
 
 
 /* APPROACH 1.3 */
-// // function Apple(type) {
-// //     this.type = type;
-// //     this.color = "green";
-// // }
+function Apple(type) {
+    this.type = type;
+    this.color = "green";
+}
 
-// // Apple.prototype.getInfo = function() {
-// //     console.log(`${this.color} is of type ${this.type}`);
-// // }
+Apple.prototype.getInfo = function() {
+    console.log(`${this.color} is of type ${this.type}`);
+}
 
 
 
 /* APPROACH 2 - USING OBJECT LITERAL */
-// // var apple = {
-// //     type: 'Kashmiri',
-// //     color: 'Red',
-// //     getInfo: function() {
-// //         console.log(`${this.color} is of type ${this.type}`);
-// //     }
-// // }
-// // apple.getInfo();
+var apple = {
+    type: 'Kashmiri',
+    color: 'Red',
+    getInfo: function() {
+        console.log(`${this.color} is of type ${this.type}`);
+    }
+}
+apple.getInfo();
 
 
 
 /* APPROACH 3 - USING SINGLETON AS A FUNCTION */
-// // var apple = new function () {
-// //     this.type = 'Canadian';
-// //     this.color = 'Greenish';
-// //     this.getInfo = function() {
-// //         console.log(`${this.color} is of type ${this.type}`);
-// //     }
-// // }
-// // apple.getInfo();
+var apple = new function () {
+    this.type = 'Canadian';
+    this.color = 'Greenish';
+    this.getInfo = function() {
+        console.log(`${this.color} is of type ${this.type}`);
+    }
+}
+apple.getInfo();
 
+
+
+
+/* ES6 STYLE */
 
 class Apple {
     constructor(type, color) {
