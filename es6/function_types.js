@@ -95,10 +95,21 @@ class Apple {
 }
 
 class KashmiriApple extends Apple {
+    constructor(type, color) {
+        super(type, color);
+    }
+
     getName(){
         return super.getName() +"  - called base class function from child class.";
     }
 }
+
+
+var kashApple = new KashmiriApple('Italian', 'Grey');
+kashApple.getInfo();
+
+console.log(`typeof kashApple is ${typeof kashApple}`);
+console.log(`Is kashApple instanceof Apple ? ${kashApple instanceof Apple}`);
 
 var apple = new Apple('Canadian', 'Purple');
 apple.getInfo();
