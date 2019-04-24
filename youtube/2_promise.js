@@ -2,6 +2,27 @@
 // resolve means that the promise is successful
 // reject means that the promise is unsuccessful
 
+/*
+    USE 1 :
+    Sometimes we need to execute a function once we get output from another function.
+    Usually functions might contain http requests and can be asynchronous calls. 
+    Thus we cannot guarentee the sequence of the function calls.
+
+    In order to make sure that the functions even if asynchronous execute one after the other, we need to use promise.
+
+    USE 2 :
+    Can log errors easily using the catch block
+
+    USE 3 :
+    Can execute something once the needed asynchronous functions provide you the output
+
+    USE 4 :
+    Can execute something once one of the asynchronous functions provide you the output
+
+    USE 5 :
+    You need to perform some action (viz reject) if there is no error in the catch block but if the http request does not return proper data.
+*/
+
 /* BASIC PROMISE */
 let promiseToCleanTheRoom = new Promise(function(resolve, reject) {
 
