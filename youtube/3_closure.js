@@ -1,15 +1,21 @@
 /* CLOSURE */
 
 /*
-    A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+    A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
+    (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. 
+    In JavaScript, closures are created every time a function is created, at function creation time.
     The inner function will have access to the variables in the outer function scope, even after the outer function has returned.
 
-    Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data. This has obvious parallels to object-oriented programming, where objects allow us to associate some data (the object's properties) with one or more methods.
+    Closures are useful because they let you associate some data (the lexical environment) with a function that operates on that data. 
+    This has obvious parallels to object-oriented programming, where objects allow us to associate some data (the object's properties) 
+    with one or more methods.
 
     Closures can do more than just read their outer functions’ local variables — they can overwrite them, too.
 
     Namespacing private functions
-    Many object-oriented languages provide the ability to declare methods as either public or private. JavaScript doesn’t have this functionality built in, but it does allow to emulate this functionality through the use of closures, which is known as the module pattern.
+    Many object-oriented languages provide the ability to declare methods as either public or private. JavaScript doesn’t have 
+    this functionality built in, but it does allow to emulate this functionality through the use of closures, which is known as 
+    the module pattern.
 
     Technically, if you are accessing any variable from outside the scope of that function, its a closure.
     passed variable is not declared inside the function.
@@ -17,7 +23,8 @@
     If it cannot find the variable, it will be "undefined"
 
     USE 1 : To solve the problem of lexical scoping
-    Javascript has a problem of Lexical scoping. With Lexical scoping, the variable defined in the upper case is automatically accessible to the below scope.
+    Javascript has a problem of Lexical scoping. With Lexical scoping, the variable defined in the upper case is automatically 
+    accessible to the below scope.
     What if in Example 3, you move the function somewhere else but variable i is at the same place. Follow Example 4 for this scenario.
 
 */
@@ -76,7 +83,8 @@ if(true) {
         console.log(i);             // access outer variable
     }
 }
-f();                                // error since function is not in scope and declared using const. so lets change and declare the function outside
+f();                                // error since function is not in scope and declared using const. so lets change and 
+                                    // declare the function outside
 
 let f;
 if(true) {
